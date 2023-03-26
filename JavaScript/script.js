@@ -29,10 +29,12 @@ btnStart.addEventListener("click", function () {
 })
 
 nextBtn.addEventListener('click', () => {
-    clearInterval(counter)
-    startTimer(10)
+    document.querySelector('.time-text').textContent = "Time"
     clearInterval(counterLine)
     lineAnimation()
+    clearInterval(counter)
+    startTimer(10)
+    
     if (quiz.questionsAll.length != quiz.questionIndex + 1) {
         quiz.questionIndex += 1;
         nextBtn.classList.remove("show")
@@ -119,7 +121,7 @@ function startTimer(time) {
 
         if (time < 0) {
             clearInterval(counter);
-            document.querySelector('.timer').textContent = "Time Over"
+            document.querySelector('.time-text').textContent = "Time Over"
             let answer = quiz.bringQuestion().trueAnswer;
 
             for (let option of optionList.children) {
@@ -131,13 +133,14 @@ function startTimer(time) {
                 
             }
             nextBtn.classList.add('show')
-            
         }
 
        
     }
     
 }
+
+
 
 let counterLine
 function lineAnimation() {

@@ -103,17 +103,14 @@ body {
 
 .timer {
   display: flex;
+  justify-content: space-between;
   gap: 10px;
-  width: 90px;
+  width: 120px;
+  height: 40px;
   align-items: center;
-  justify-content: center;
   border-radius: 4px;
   background: #143f68;
   color: #fff;
-}
-
-.times-text {
-  font-size: 1.4rem;
 }
 
 .time-second {
