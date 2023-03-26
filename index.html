@@ -17,9 +17,18 @@
 
     <div class="card quiz-box bg-black text-white">
         <header class="card-header">
-            <div class="title py-2 text-center">Quiz App</div>
+            <div class="title">Quiz App</div>
+            <div class="timer p-1 my-2">
+                <div class="time-text">
+                   Time
+                </div>
+                <div class="time-second bg-warning">
+                    10
+                </div>
+            </div>
+            <div class="time-line"></div>
         </header>
-        <section class="card-body">
+        <section class="card-body mt-3">
             <div class="question-text p-3 pt-0 pb-0">
                
             </div>
@@ -28,13 +37,26 @@
             </div>
         </section>
         <footer class="card-footer">
-            <div class="question-index">            
+            <div class="question-index">  
+                <span class="badge bg-warning">
+                    1/4
+                </span>          
             </div>
             <button class="next-btn btn btn-primary btn-sm mb-2">Next question</button>
         </footer>
     </div>
 
-   
+    <div class="card score-box bg-black">
+        <div class="icon"><i class="fas fa-crown text-primary"></i></div>
+        <div class="score-explanation text-white">
+          
+        </div>
+        <div class="score-buttons">
+            <button class="btn-again btn btn-primary btn-md">Start Test</button>
+            <button class="btn-finish btn btn-primary btn-md">Finish Test</button>
+        </div>
+    </div>
+    <script src="JavaScript/question.js"></script>
     <script src="JavaScript/script.js"></script>
 </body>
 </html>

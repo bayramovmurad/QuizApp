@@ -1,24 +1,42 @@
+@mixin box()
+    width: 550px
+    opacity: 0
+    pointer-events: none
+    transition: all .5s ease
+    transform: translate(-50%, -50%) scale(.7)
+@mixin activeBox()
+    pointer-events: auto
+    opacity: 1
+    transform: translate(-50%, -50%) scale(1)
+
+@mixin flex()
+    display: flex
+    align-items: center
+    justify-content: space-between
+    
 body
     background: black
-.btn-start, .quiz-box
+.btn-start, .quiz-box, .score-box
     position: absolute
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
 .card-body
     padding: 0 !important
+.card-header
+   @include flex()
 .next-btn
     font-size: 90%
+
+.quiz-box header
+    position: relative
 .quiz-box
-    width: 550px
-    opacity: 0
-    pointer-events: none
-    transition: all .5s ease
-    transform: translate(-50%, -50%) scale(.7)
+    @include box()
+    
 .quiz-box.active
-    pointer-events: auto
-    opacity: 1
-    transform: translate(-50%, -50%) scale(1)
+    @include activeBox()
+    
+    
 .quiz-box header .title
     font-size: 25px
     font-weight: 600
@@ -33,9 +51,7 @@ body
     font-size: 16px
     margin-bottom: 10px
     cursor: pointer
-    display: flex
-    align-items: center
-    justify-content: space-between
+    @include flex()
 .option:hover
     color: #112b2c
     background: #6c757d
@@ -53,3 +69,60 @@ body
 .next-btn.show
     opacity: 1
     pointer-events: auto
+.card-footer
+    @include flex()
+
+// timer
+
+
+.timer
+    display: flex
+    gap: 10px
+    width: 90px
+    align-items: center
+    justify-content: center
+    border-radius: 4px
+    background: #143f68
+    color: #fff
+.times-text
+    font-size: 1.4rem
+.time-second
+    border-radius: 3px
+    height: 25px
+    width: 25px
+    text-align: center
+
+// time animation
+
+.time-line
+    position: absolute
+    bottom: 0
+    left: 0
+    background: #fff
+    height: 3px
+    width: 0px
+
+// quiz-box
+
+.score-box
+    @include box()
+    align-items: center
+    justify-content: center
+    padding: 30px
+    
+    
+.score-box.active
+    @include activeBox()
+
+.score-box i
+    font-size: 9.5rem
+    margin-bottom: 1rem
+
+.score-explanation
+    font-size: 1.8rem
+    font-weight: 500
+    line-height: 35px
+    margin-bottom: 1.2rem
+.score-buttons button
+    margin-left: 10px
+    
