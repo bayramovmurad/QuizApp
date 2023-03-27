@@ -10,11 +10,26 @@ Quiz.prototype.bringQuestion = function () {
 
 
 const optionList = document.querySelector(".option-list");
-const correctIcon = '<div class="icon"><i class="fas fa-check"></i></div>'
-const incorrectIcon = '<div class="icon"><i class="fas fa-times"></i></div>'
-const nextBtn = document.querySelector('.next-btn')
+const correctIcon = '<div class="icon"><i class="fas fa-check"></i></div>';
+const incorrectIcon = '<div class="icon"><i class="fas fa-times"></i></div>';
+const nextBtn = document.querySelector('.next-btn');
 const scoreBox = document.querySelector('.score-box');
 const btnStart = document.querySelector(".btn-start");
+const inputs = document.querySelector('.name-input .inputs');
+const nameInput = document.querySelector('.name-input');
+const nameClick = document.querySelector('.name-click');
+
+btnStart.style.display = 'none'
+
+nameClick.addEventListener("click", function(){
+    if(inputs.value != ''){
+        btnStart.style.display = 'block'
+        nameInput.style.display = 'none'
+
+    }else if(inputs.value == ''){
+        alert('Please enter your first and last name...')
+    }
+})
 
 const quiz = new Quiz(questionsAll);
 
@@ -60,7 +75,7 @@ document.querySelector('.btn-again').addEventListener('click', function () {
 })
 
 function showScore(totalQuestion, correctAnswer) {
-    let correct = `  You gave ${correctAnswer} correct answers out of ${totalQuestion} questions in total.`
+    let correct = ` <strong>${inputs.value} </strong> you gave ${correctAnswer} correct answers out of ${totalQuestion} questions in total.`
     document.querySelector('.score-box .score-explanation').innerHTML = correct;
 }
 
