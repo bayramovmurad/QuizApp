@@ -33,7 +33,10 @@ nameClick.addEventListener("click", function(){
 
 const quiz = new Quiz(questionsAll);
 
+// a function to start with quiz
+
 btnStart.addEventListener("click", function () {
+    // To activate the quiz screen
     document.querySelector('.quiz-box').classList.add('active')
     showQuestion(quiz.bringQuestion());
     startTimer(10)
@@ -42,6 +45,8 @@ btnStart.addEventListener("click", function () {
     nextBtn.classList.remove("show")
 
 })
+
+// to move on to the next question and fit the values to it.
 
 nextBtn.addEventListener('click', () => {
     document.querySelector('.time-text').textContent = "Time"
@@ -64,9 +69,12 @@ nextBtn.addEventListener('click', () => {
     }
 })
 
+
+// button that appears on the result screen to finish the quiz
 document.querySelector('.btn-finish').addEventListener('click', function () {
     window.location.reload();
 })
+// button that appears on the result screen to restart the quiz
 document.querySelector('.btn-again').addEventListener('click', function () {
     quiz.correctAnswerNumber = 0;
     quiz.questionIndex = 0;
@@ -74,11 +82,14 @@ document.querySelector('.btn-again').addEventListener('click', function () {
     scoreBox.classList.remove('active')
 })
 
+// function to show the result on the quiz screen
+
 function showScore(totalQuestion, correctAnswer) {
     let correct = ` <strong>${inputs.value} </strong> you gave ${correctAnswer} correct answers out of ${totalQuestion} questions in total.`
     document.querySelector('.score-box .score-explanation').innerHTML = correct;
 }
 
+// questions
 
 function showQuestion(question) {
     let questions = `<span>${question.questionText}</span>`
@@ -104,6 +115,9 @@ function showQuestion(question) {
     }
 }
 
+
+// process for questions
+
 function optionSelected(option) {
     clearInterval(counter)
     clearInterval(counterLine)
@@ -125,6 +139,8 @@ function optionSelected(option) {
 
     nextBtn.classList.add("show")
 }
+
+// to show the remaining time
 
 let counter;
 function startTimer(time) {
@@ -155,7 +171,7 @@ function startTimer(time) {
     
 }
 
-
+// zamani bir border animasyonla gostermek için
 
 let counterLine
 function lineAnimation() {

@@ -12,6 +12,7 @@
 </head>
 
 <body class="bg-dark">
+    <!-- Process for user login -->
     <div class="name-input bg-black rounded text-white w-25 p-4 align-items-center ">
         <label for="label" class="mb-3 wrapper">
             <div class="typing-demo">
@@ -24,12 +25,14 @@
             <button class="name-click btn btn-primary py-1 px-2">Go Quiz</button>
         </div>
     </div>
-
+    <!-- process to start the quiz -->
     <div class="btn-start">
         <button class="btn btn-warning btn-lg">Start Quiz</button>
     </div>
 
+    <!-- quiz screen -->
     <div class="card quiz-box bg-black text-white">
+        <!-- time and title -->
         <header class="card-header">
             <div class="title">Quiz App</div>
             <div class="timer p-1 my-2">
@@ -42,6 +45,7 @@
             </div>
             <div class="time-line"></div>
         </header>
+        <!-- question and question answers  -->
         <section class="card-body mt-3">
             <div class="question-text p-3 pt-0 pb-0">
 
@@ -51,15 +55,18 @@
             </div>
         </section>
         <footer class="card-footer">
+            <!-- Number of questions -->
             <div class="question-index">
                 <span class="badge bg-warning">
 
                 </span>
             </div>
+            <!-- button for next question -->
             <button class="next-btn btn btn-primary btn-sm mb-2">Next question</button>
         </footer>
     </div>
 
+    <!-- at the end a screen for results -->
     <div class="card score-box bg-black">
         <div class="icon"><i class="fas fa-crown text-primary"></i></div>
         <div class="score-explanation text-white">
