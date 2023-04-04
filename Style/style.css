@@ -46,10 +46,14 @@ body {
   font-weight: 600;
 }
 
+
+/* soru ve soru cevap stilleri */
+
 .quiz-box .question-text {
   font-size: 20px;
   font-weight: 600;
 }
+
 
 .quiz-box .option-list {
   padding: 18px 0px;
@@ -85,6 +89,8 @@ body {
   pointer-events: none;
 }
 
+/* sonraki btn ve soru uzunluğu stilleri */
+
 .next-btn {
   opacity: 0;
   pointer-events: none;
@@ -100,6 +106,8 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
+/* remaining time style */
 
 .timer {
   display: flex;
@@ -120,6 +128,8 @@ body {
   text-align: center;
 }
 
+
+
 .time-line {
   position: absolute;
   bottom: 0;
@@ -128,6 +138,8 @@ body {
   height: 3px;
   width: 0px;
 }
+
+/* Animation of the results screen */
 
 .score-box {
   width: 550px;
@@ -162,6 +174,8 @@ body {
 .score-buttons button {
   margin-left: 10px;
 }
+
+/* text animation in login description */
 
 .wrapper {
   display: grid;
